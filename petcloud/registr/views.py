@@ -1,10 +1,16 @@
 # Подключение для рендера
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
 # Подключение стандартной формы для регистрации
 from django.contrib.auth.forms import UserCreationForm
 
 
 # Функция регистрации
+from petcloud.registr.forms import PostForm
+from petcloud.registr.models import Profile
+
+
 def registr(request):
     # Массив для передачи данных шаблонны
     data = {}
@@ -29,3 +35,22 @@ def registr(request):
         data['form'] = form
         # Рендаринг страницы
         return render(request, 'registr/registr.html', data)
+
+@login_required
+def editprofile(request):
+    if request.method == 'POST':
+        profile = Profile.objects.get(id=request.user.id)
+        try:
+            profile.username = request.POST['username']
+        except:
+            pass
+        try:
+            profile.email = request.POST['email']
+        except:
+            pass
+        profile.save()
+        return redirect('editprofile')
+
+
+
+

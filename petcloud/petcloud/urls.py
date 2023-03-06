@@ -21,4 +21,5 @@ from registr import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registr/', views.registr),
+    path('editprofile/', views.editprofile, name='editprofile'),
 ]
