@@ -7,8 +7,8 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 # Функция регистрации
-from petcloud.registr.forms import PostForm
-from petcloud.registr.models import Profile
+# from petcloud.registr.forms import PostForm
+from .models import Profile
 
 
 def registr(request):
