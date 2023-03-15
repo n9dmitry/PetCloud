@@ -22,6 +22,8 @@ def registr(request):
         if form.is_valid():
             # Сохраняем пользователя
             form.save()
+            user = User.objects.get(username=request.POST['username'])
+            Profile(user=user, email=user.email).save()
             # Передача формы к рендару
             data['form'] = form
             # Передача надписи, если прошло всё успешно
