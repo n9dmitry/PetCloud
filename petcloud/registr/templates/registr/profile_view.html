@@ -1,0 +1,9 @@
+{% extends 'registr/base.html' %}
+{% load static %}
+{% block title %}Профиль {{ profileview.user.username }}{% endblock %}
+{% block content %}
+<h4>Профиль {{ profileview.user.username }}</h4>
+
+{{ profileview.email }}
+
+{% endblock content %}

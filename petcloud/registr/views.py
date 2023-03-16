@@ -9,16 +9,23 @@ from django.contrib.auth.forms import UserCreationForm
 # Функция регистрации
 # from petcloud.registr.forms import PostForm
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from .forms import *
 from .models import Profile
 
 class SignUp(CreateView):
-    template_name = 'registr/registr.html'
+    """Вьюха регистрации на сайте"""
+    template_name = 'registr/register.html'
     form_class = SignUpForm
     success_url = reverse_lazy('news/news_form.html')
     #fields = ('username', 'email', 'password1', 'password2')
+
+class ProfileView(DetailView):
+    """Просмотр профиля"""
+    model = Profile
+    template_name = 'registr/profile_view.html'
+    context_object_name = 'profileview'
 
 
 # def registr(request):
@@ -39,14 +46,14 @@ class SignUp(CreateView):
 #             # Передача надписи, если прошло всё успешно
 #             data['res'] = "Всё прошло успешно"
 #             # Рендаринг страницы
-#             return render(request, 'registr/registr.html', data)
+#             return render(request, 'registr/register.html', data)
 #     else:  # Иначе
 #         # Создаём форму
 #         form = UserCreationForm()
 #         # Передаём форму для рендеринга
 #         data['form'] = form
 #         # Рендаринг страницы
-#         return render(request, 'registr/registr.html', data)
+#         return render(request, 'registr/register.html', data)
 #
 # @login_required
 # def editprofile(request):
