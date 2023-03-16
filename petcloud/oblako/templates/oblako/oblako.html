@@ -7,7 +7,7 @@
     <title>Oblako - Files</title>
 </head>
 <body>
-    <form action="/" method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% for entry in form %}
            <div>

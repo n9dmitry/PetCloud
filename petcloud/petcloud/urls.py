@@ -10,6 +10,6 @@ urlpatterns = [
     path('registr/', registr),
     path('editprofile/', editprofile, name='editprofile'),
     path('news_form/', news_add),
-    path('files_add/', views.entry, name='filesadd')
+    path('files_add/', filesadd, name='filesadd')
 
 ]

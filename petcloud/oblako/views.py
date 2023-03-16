@@ -15,6 +15,6 @@ def filesadd(request):
     else:
         form = FilesForm()
 
-    return render(request, "entry.html", {
+    return render(request, "oblako/oblako.html", {
         "form": form
     })
