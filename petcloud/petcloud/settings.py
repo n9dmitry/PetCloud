@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registr.apps.RegistrConfig',
     'news.apps.NewsConfig',
+    'oblako.apps.OblakoConfig',
 
 ]
 

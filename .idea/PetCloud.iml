@@ -9,6 +9,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/petcloud/registr/templates" />
+        <option value="$MODULE_DIR$/petcloud/news/templates" />
       </list>
     </option>
   </component>
