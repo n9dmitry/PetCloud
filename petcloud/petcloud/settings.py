@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'oblako.apps.OblakoConfig',
     'registr.apps.RegistrConfig',
+    'petcloud.apps.PetCLoudConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
