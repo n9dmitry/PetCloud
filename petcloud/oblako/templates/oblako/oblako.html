@@ -1,11 +1,22 @@
 {% extends "petcloud/base.html" %}
 
-{% block styles %} {% endblock %}
+{% block styles %}{% endblock %}
 
 {% block title %} Добавление файла {% endblock %}
 
 {% block content %}
 
-{% endblock %}
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{error}}
+        <span class="title">Добавление файла</span>
+        {{ form.name }}
+        {{ form.description }}
+        {{ form.media }}
+        <input type="text" name="user" value="{{ user.id }}" hidden>
+        <button type="submit">Добавить</button>
+    </form>
+</div>
 
-<!---->
+{% endblock %}
