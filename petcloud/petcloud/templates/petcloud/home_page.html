@@ -1,0 +1,42 @@
+{% extends "petcloud/base.html" %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/styles/home_page_styles.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="container_items">
+            <div class="items_item">
+                <img src="/static/dd_team_icon.jpg">
+                <span class="item_name">Денис(Spirits Fun)</span>
+                <span class="item_position">Тим-лид</span>
+            </div>
+            <div class="items_item">
+                <img src="/static/dd_team_icon.jpg">
+                <span class="item_name">Денис</span>
+                <span class="item_position">Django-dev</span>
+            </div>
+            <div class="items_item">
+                <img src="/static/dd_team_icon.jpg">
+                <span class="item_name">Дмитрий</span>
+                <span class="item_position">Django-dev</span>
+            </div>
+            <div class="items_item">
+                <img src="/static/dd_team_icon.jpg">
+                <span class="item_name">Наиль</span>
+                <span class="item_position">Django-dev</span>
+            </div>
+            <div class="join_team">
+                <a href="#">Присоединяйся!</a>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
