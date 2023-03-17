@@ -9,7 +9,7 @@ from django.contrib.auth.forms import UserCreationForm
 # Функция регистрации
 # from petcloud.registr.forms import PostForm
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, UpdateView
 
 from .forms import *
 from .models import Profile
@@ -26,6 +26,12 @@ class ProfileView(DetailView):
     model = Profile
     template_name = 'registr/profile_view.html'
     context_object_name = 'profileview'
+
+class ProfileUpdateView(UpdateView):
+    model = Profile
+    fields = ('__all__')
+    template_name = 'registr/profile_update.html'
+    template_name_suffix = '_update_form'
 
 
 # def registr(request):
