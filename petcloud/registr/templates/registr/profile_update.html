@@ -1,0 +1,12 @@
+{% extends 'registr/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update">
+</form>
+{% else %}
+<h3>Залогинся</h3>
+{% endif %}
+{% endblock content %}
