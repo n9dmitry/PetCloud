@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from news.views import *
 from registr.views import *
 from oblako.views import *
@@ -9,10 +9,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('oblako/', include('oblako.urls')),
     path('registr/', SignUp.as_view(), name = 'signup'),
     #path('editprofile/', editprofile, name='editprofile'),
     path('news_form/', news_add),
-    path('files_add/', filesadd, name='filesadd'),
     path('profile/<int:pk>/', ProfileView.as_view(), name = 'profile_view'),
     path('', index)
 ]
