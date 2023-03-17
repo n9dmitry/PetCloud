@@ -12,10 +12,40 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <div class="menu_burger">
+            <a href="#">Новости</a> 
+            <a href="#">Облако</a>
+            <a href="#">О нас</a>
+            <span id="close_burger">Закрыть меню</span>
+        </div>
+        <div class="burger">
+            <img src="/static/burger.svg">
+        </div>
+        <span class="header_title">
+            PetCloud
+        </span>
+        <div class="profile">
+            <a href="#">
+                <img src="/static/profile.svg">
+            </a>    
+        </div>
+    </header>
     {% block content %}
 
     {% endblock %}
-    <footer></footer>
+    <footer>
+        <img class="footer_img" src="/static/dd_team_icon.jpg" alt="">
+        <span class="footer_body">
+            Данный проект создан совместными усилиями команды DD Team 
+        </span>
+        <span class="footer_phone_number">
+            8 (932)-323-17-36
+        </span>
+        <span class="footer_mail">
+            piplison2122@gmail.com
+        </span>
+    </footer>
+    <script src="/static/js/script_base.js"></script>
 </body>
 </html>
