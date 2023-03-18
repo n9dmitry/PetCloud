@@ -1,7 +1,9 @@
 # Подключение для рендера
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.contrib.auth.views import LoginView
+from django.http import Http404
+from django.shortcuts import render, redirect, get_object_or_404
 # Подключение стандартной формы для регистрации
 from django.contrib.auth.forms import UserCreationForm
 
@@ -19,7 +21,6 @@ class SignUp(CreateView):
     template_name = 'registr/register.html'
     form_class = SignUpForm
     success_url = reverse_lazy('news/news_form.html')
-    #fields = ('username', 'email', 'password1', 'password2')
 
 class ProfileView(DetailView):
     """Просмотр профиля"""
@@ -29,52 +30,13 @@ class ProfileView(DetailView):
 
 class ProfileUpdateView(UpdateView):
     model = Profile
-    fields = ('__all__')
+    form_class = ProfileForm
+    #fields = ('__all__')
     template_name = 'registr/profile_update.html'
-    template_name_suffix = '_update_form'
 
+    def get_success_url(self):
+        return reverse_lazy('profile_view', kwargs ={'pk': self.object.pk})
 
-# def registr(request):
-#     # Массив для передачи данных шаблонны
-#     data = {}
-#     # Проверка что есть запрос POST
-#     if request.method == 'POST':
-#         # Создаём форму
-#         form = UserCreationForm(request.POST)
-#         # Валидация данных из формы
-#         if form.is_valid():
-#             # Сохраняем пользователя
-#             form.save()
-#             user = User.objects.get(username=request.POST['username'])
-#             Profile(user=user, email=user.email).save()
-#             # Передача формы к рендару
-#             data['form'] = form
-#             # Передача надписи, если прошло всё успешно
-#             data['res'] = "Всё прошло успешно"
-#             # Рендаринг страницы
-#             return render(request, 'registr/register.html', data)
-#     else:  # Иначе
-#         # Создаём форму
-#         form = UserCreationForm()
-#         # Передаём форму для рендеринга
-#         data['form'] = form
-#         # Рендаринг страницы
-#         return render(request, 'registr/register.html', data)
-#
-# @login_required
-# def editprofile(request):
-#     if request.method == 'POST':
-#         profile = Profile.objects.get(id=request.user.id)
-#         try:
-#             profile.username = request.POST['username']
-#         except:
-#             pass
-#         try:
-#             profile.email = request.POST['email']
-#         except:
-#             pass
-#         profile.save()
-#         return redirect('editprofile')
 
 
 
