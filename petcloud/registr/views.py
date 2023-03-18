@@ -30,12 +30,15 @@ class ProfileView(DetailView):
 
 class ProfileUpdateView(UpdateView):
     model = Profile
-    form_class = ProfileForm
+    form_class = ProfileChangeForm
     #fields = ('__all__')
     template_name = 'registr/profile_update.html'
 
     def get_success_url(self):
         return reverse_lazy('profile_view', kwargs ={'pk': self.object.pk})
+
+    def get_queryset(self):
+        return Profile.objects.filter(user = self.request.user)
 
 
 

@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 
@@ -23,8 +23,8 @@ class SignUpForm(UserCreationForm):
             profile.save()
         return user
 
-class ProfileForm(ModelForm):
+class ProfileChangeForm(UserChangeForm):
     """Форма профиля"""
     class Meta:
         model = Profile
-        fields = ('__all__')
+        fields = ('email',)
