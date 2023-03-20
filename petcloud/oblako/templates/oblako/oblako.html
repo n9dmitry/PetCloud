@@ -10,10 +10,10 @@
     <form action="" method="POST">
         {% csrf_token %}
         {{error}}
-        <span class="title">Добавление файла</span></br>
-        <p>Название: {{ form.name }} </p></br>
-        <p>Описание: {{ form.description }} </p></br>
-        <p>Файл: {{ form.media }} </p></br>
+        <span class="title">Добавление файла</span>
+        <p>Название: <span id="zalupa2">{{ form.name }}</span> </p>
+        <p>Описание: {{ form.description }} </p>
+        <p>Файл:<span id="zalupa">{{ form.media }}</span>  </p>
         <input type="text" name="user" value="{{ user.id }}" hidden>
         <button type="submit">Добавить</button>
     </form>

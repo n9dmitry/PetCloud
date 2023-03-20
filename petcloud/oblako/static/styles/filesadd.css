@@ -2,12 +2,49 @@
     display: flex;
     margin: 65px 30px 60px 30px;
     background-color: #808080;
+    border-radius: 15px;
+
 }
 
-form > input, form > button {
+form > button, form > p {
     margin: 15px;
+    border-radius: 15px;
+    border: 0;
+}
+
+form {
+    padding-top: 10px;
+    padding-left: 0px;
 }
 
 #id_description {
-    margin: 10px;
+    margin: 0px 43px 0px 80px;
+    width: 162px;
+    height: 118px;
+    border-radius: 15px;
+
+}
+
+.title {
+    font-size: 23px;
+    margin: 13px 69px 0px 69px;
+
+}
+
+form > input {
+    border-radius: 15px;
+}
+
+#zalupa {
+    margin-left: 26px;
+}
+
+#zalupa > input {
+    border: 0px;
+    border-radius: 15px;
+}
+
+#zalupa2 > input {
+    border-radius: 15px;
+    border: 0;
 }
