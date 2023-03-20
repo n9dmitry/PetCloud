@@ -1,6 +1,6 @@
 {% extends "petcloud/base.html" %}
 
-{% block styles %}{% endblock %}
+{% block styles %}    <link rel="stylesheet" href="/static/styles/filesadd.css">{% endblock %}
 
 {% block title %} Добавление файла {% endblock %}
 
@@ -10,10 +10,10 @@
     <form action="" method="POST">
         {% csrf_token %}
         {{error}}
-        <span class="title">Добавление файла</span>
-        {{ form.name }}
-        {{ form.description }}
-        {{ form.media }}
+        <span class="title">Добавление файла</span></br>
+        <p>Название: {{ form.name }} </p></br>
+        <p>Описание: {{ form.description }} </p></br>
+        <p>Файл: {{ form.media }} </p></br>
         <input type="text" name="user" value="{{ user.id }}" hidden>
         <button type="submit">Добавить</button>
     </form>

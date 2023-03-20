@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    margin: 65px 30px 60px 30px;
+    background-color: #808080;
+}
+
+form > input, form > button {
+    margin: 15px;
+}
+
+form > textarea {
+    margin: 10px;
+}
+
