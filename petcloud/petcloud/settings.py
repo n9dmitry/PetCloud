@@ -141,15 +141,17 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-
+#django allauth
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION ='mandatory'
+#Пока выключен, на прод нужно включить и разкоммитить верификацию
+ACCOUNT_EMAIL_REQUIRED = False
+#ACCOUNT_EMAIL_VERIFICATION ='mandatory'
 ACCOUNT_UNIQUE_EMAIL =True
+#end django allauth
 
 # for sned verification links
 DEFAULT_FROM_EMAIL = 'nauwyfw@yandex.ru'

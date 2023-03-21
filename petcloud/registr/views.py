@@ -24,7 +24,7 @@ class SignUp(CreateView):
 
 class ProfileView(DetailView):
     """Просмотр профиля"""
-    model = Profile
+    model = User
     template_name = 'registr/profile_view.html'
     context_object_name = 'profileview'
 

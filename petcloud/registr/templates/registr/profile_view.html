@@ -2,8 +2,7 @@
 {% load static %}
 {% block title %}Профиль {{ profileview.user.username }}{% endblock %}
 {% block content %}
-<h4>Профиль {{ profileview.user.username }}</h4>
-
-{{ profileview.email }}
+<h4>Профиль {{ user.username }}</h4>
+<h4>{{ user.email }}</h4>
 
 {% endblock content %}
