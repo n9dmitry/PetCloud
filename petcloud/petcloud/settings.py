@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.staticfiles',
 ]
 
@@ -70,6 +74,14 @@ TEMPLATES = [
         },
     },
 ]
+# django allauth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
 
 WSGI_APPLICATION = 'petcloud.wsgi.application'
 
@@ -80,9 +92,9 @@ WSGI_APPLICATION = 'petcloud.wsgi.application'
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'petcloud',
+    'NAME': 'postgres1',
     'USER': 'postgres',
-    'PASSWORD': '666666',
+    'PASSWORD': 'password',
     'HOST': '127.0.0.1',
     'PORT': '5432'
     }
@@ -127,3 +139,20 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION ='mandatory'
+ACCOUNT_UNIQUE_EMAIL =True
+
+# for sned verification links
+DEFAULT_FROM_EMAIL = 'nauwyfw@yandex.ru'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'nauwyfw'
+EMAIL_HOST_PASSWORD = 'liserg09vip'
+EMAIL_TIMEOUT = 5
+EMAIL_USE_SSL = True
