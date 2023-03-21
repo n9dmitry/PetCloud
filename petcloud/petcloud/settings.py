@@ -136,9 +136,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
@@ -153,6 +155,6 @@ DEFAULT_FROM_EMAIL = 'nauwyfw@yandex.ru'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'nauwyfw'
-EMAIL_HOST_PASSWORD = 'liserg09vip'
+EMAIL_HOST_PASSWORD = 'iqgjxaehloynukcz'
 EMAIL_TIMEOUT = 5
 EMAIL_USE_SSL = True
