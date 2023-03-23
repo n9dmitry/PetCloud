@@ -25,9 +25,15 @@
         <span><a class="header_title" href = "{% url 'index' %}">PetCloud</a>
         </span>
         <div class="profile" >
+            {% if user.user.is_authenticated %}
+            <a href="url 'profile_view'">
+            <img src="{{ profile.avatar.url }}">
+                </a>
+            {% else %}
             <a href="#">
                 <img src="/static/profile.svg">
-            </a>    
+            </a>
+            {% endif %}
         </div>
     </header>
     {% block content %}

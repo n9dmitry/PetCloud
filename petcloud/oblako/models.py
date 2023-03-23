@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from registr.models import Profile
+
+
 class Files(models.Model):
     # Koshernost = [
     #     ('xxxx', 'zbs! ogon!'),
@@ -11,7 +14,7 @@ class Files(models.Model):
     name = models.CharField(max_length=60)
     description = models.TextField(max_length=600, null=True, blank=True)
     media = models.FileField(null=True, blank=True)
-    user = models.ManyToManyField(User)
+    user = models.ManyToManyField(Profile)
 
     def __str__(self):
         return self.name

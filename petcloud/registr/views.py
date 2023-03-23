@@ -1,6 +1,5 @@
 # Подключение для рендера
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
 from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
@@ -22,9 +21,10 @@ class SignUp(CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy('news/news_form.html')
 
+
 class ProfileView(DetailView):
     """Просмотр профиля"""
-    model = User
+    model = Profile
     template_name = 'registr/profile_view.html'
     context_object_name = 'profileview'
 
