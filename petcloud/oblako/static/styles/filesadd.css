@@ -40,11 +40,15 @@ form > input {
 }
 
 #zalupa > input {
+    -o-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
     border: 0px;
     border-radius: 15px;
 }
 
 #zalupa2 > input {
+    
     border-radius: 15px;
     border: 0;
 }
