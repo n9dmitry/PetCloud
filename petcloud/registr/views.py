@@ -26,7 +26,10 @@ class ProfileView(DetailView):
     """Просмотр профиля"""
     model = Profile
     template_name = 'registr/profile_view.html'
-    context_object_name = 'profileview'
+    #context_object_name = 'profileview'
+
+    def get_user_profile(self, pk):
+        return get_object_or_404(Profile, slug=pk)
 
 class ProfileUpdateView(UpdateView):
     model = Profile
@@ -34,11 +37,13 @@ class ProfileUpdateView(UpdateView):
     #fields = ('__all__')
     template_name = 'registr/profile_update.html'
 
-    def get_success_url(self):
-        return reverse_lazy('profile_view', kwargs ={'pk': self.object.pk})
+    # def get_success_url(self):
+    #     return reverse_lazy('profile_view', kwargs ={'pk': self.object.pk})
+    def get_object(self):
+        return self.request.user
 
-    def get_queryset(self):
-        return Profile.objects.filter(user = self.request.user)
+    # def get_queryset(self):
+    #     return Profile.objects.filter(username = self.request.user)
 
 
 
